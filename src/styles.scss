@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+$bgColor: rgb(48, 48, 48);
+$textColor: rgb(6, 37, 31);
+$buttonColor:rgb(9, 56, 44);
+$buttonHoverColor:rgb(66, 180, 146);
+$buttextColor: white;
+
+$postBgColor: rgb(227, 238, 235);
+
+
+.post{
+    background-color:$postBgColor;
+    border: 30px solid transparent;
+    border-image: url('assets/img/bord.png') 20% round;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 20px;
+    width: auto;
+    height: max-content;
+}
+
+::selection{
+  background-color: $buttonHoverColor;
+}
+
+
+html{
+  font-family: 'Roboto', sans-serif;
+  color: $textColor;
+}
+
+body{
+  margin:0;
+  background-image: url('assets/img/patterndark.png');
+  background-size: 1200px;
+}
+
+button{
+  color: $buttextColor;
+  padding: 1%;
+  width: 150px;
+  background-color:$buttonColor;
+  border:0px;
+  font-size: 20px;
+}
+button:hover{
+  background-color: $buttonHoverColor;
+}
+
+span{
+  display: block;
+  word-wrap: break-word;
+  font-size: 16px;
+  padding: 10px;
+}
