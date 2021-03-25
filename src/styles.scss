@@ -4,17 +4,36 @@ $bgColor: rgb(48, 48, 48);
 $textColor: rgb(6, 37, 31);
 $buttonColor:rgb(9, 56, 44);
 $buttonHoverColor:rgb(66, 180, 146);
-$buttextColor: white;
+$buttonTextColor: white;
 
 $postBgColor: rgb(227, 238, 235);
 
+#button{
+  margin-top: 10px;
+  width: 200px;
+}
+
+
+.submit{
+  background-color: $buttonColor;
+  color: $buttonTextColor;
+  border: none;
+  padding: 10px;
+}
+
+.submit:hover{
+  background-color: $buttonHoverColor;
+}
+
+.container{
+  margin-left: 10%;
+  margin-right: 10%;
+}
 
 .post{
     background-color:$postBgColor;
     border: 30px solid transparent;
     border-image: url('assets/img/bord.png') 20% round;
-    margin-left: 10%;
-    margin-right: 10%;
     margin-top: 20px;
     width: auto;
     height: max-content;
@@ -34,23 +53,34 @@ body{
   margin:0;
   background-image: url('assets/img/patterndark.png');
   background-size: 1200px;
+
+  button{
+    color: $buttonTextColor;
+    padding: 1%;
+    width: 150px;
+    background-color:$buttonColor;
+    border:0px;
+    font-size: 20px;
+  }
+  button:hover{
+    background-color: $buttonHoverColor;
+  }
+  
+  span{
+    display: block;
+    word-wrap: break-word;
+    font-size: 16px;
+    padding: 10px 0px;
+  }
+
+  textarea{
+    resize: none;
+    width: 80%;
+    height: 100px;
+  }
+
 }
 
-button{
-  color: $buttextColor;
-  padding: 1%;
-  width: 150px;
-  background-color:$buttonColor;
-  border:0px;
-  font-size: 20px;
-}
-button:hover{
-  background-color: $buttonHoverColor;
-}
 
-span{
-  display: block;
-  word-wrap: break-word;
-  font-size: 16px;
-  padding: 10px;
-}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

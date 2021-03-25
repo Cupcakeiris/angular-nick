@@ -1,0 +1,18 @@
+
+<div class="post">
+        <form (submit)="createPost()">
+        <label style="font-size:20px;"><b>Create new post</b></label><br><br>
+
+        <label>Title</label><br>
+        <input [(ngModel)]="title" type="text" name="title"><br><br>
+        
+        <label>Username</label><br>
+        <input [(ngModel)]="author" type="text" name="author"><br><br>
+
+        <label>Description</label><br>
+        <textarea [(ngModel)]="description" name="description"></textarea><br>
+        
+        <button>Submit</button>
+        <br><br>
+        </form>
+</div>

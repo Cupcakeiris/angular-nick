@@ -1,0 +1,11 @@
+for short 
+git add .
+git commit -m "some info"
+git push origin master
+
+if you write 
+git add .
+git commit -m "text info"
+this will save you're changes
+
+(c)Reste 17.03.21

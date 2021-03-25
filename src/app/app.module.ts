@@ -9,6 +9,12 @@ import { HomeComponent } from './home/home.component';
 import { VideoComponent } from './video/video.component';
 import { BlogComponent } from './blog/blog.component';
 import { ContactComponent } from './contact/contact.component';
+import { CreatePostComponent } from './create-post/create-post.component';
+
+import { environment } from '../environments/environment';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
+import { UserPostService } from './service/user-post.service';
 
 
 @NgModule({
@@ -19,13 +25,16 @@ import { ContactComponent } from './contact/contact.component';
     HomeComponent,
     VideoComponent,
     BlogComponent,
-    ContactComponent
+    ContactComponent,
+    CreatePostComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireDatabaseModule
   ],
-  providers: [],
+  providers: [UserPostService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
