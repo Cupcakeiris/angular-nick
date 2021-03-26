@@ -14,7 +14,7 @@ export class UserPostService {
   constructor(public uPost: AngularFirestore) { 
     //this.post = this.uPost.collection('userPost').valueChanges();
 
-    this.postCollection=this.uPost.collection('userPost', ref => ref.orderBy('date', 'asc'));
+    this.postCollection=this.uPost.collection('userPost', ref => ref.orderBy('date', 'desc'));
 
     this.post = this.postCollection.snapshotChanges().pipe(map(changes => {
       return changes.map(a=>{
