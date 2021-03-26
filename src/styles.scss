@@ -49,9 +49,21 @@ html{
   color: $textColor;
 }
 
+
+@media only screen and (max-width: 3000px) {
+  body {
+    background-image: url('assets/img/patterndark.png');
+  }
+}
+
+@media only screen and (min-width: 3000px) {
+  body {
+    background-image: url('assets/img/rickroll.gif');
+  }
+}
+
 body{
   margin:0;
-  background-image: url('assets/img/patterndark.png');
   background-size: 1200px;
 
   button{

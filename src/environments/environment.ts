@@ -4,6 +4,8 @@
 
 export const environment = {
   production: false,
+
+  //DONT EVER LOOK AT HERE U MUFFIN
   firebase: {
     apiKey: "AIzaSyCMuzTYjB6dEhncGDVrzGRDHQZfhKWndUs",
     authDomain: "edgermanflex.firebaseapp.com",

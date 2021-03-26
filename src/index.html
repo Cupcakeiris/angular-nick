@@ -10,7 +10,29 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
-<body>
+
+<script>
+  //"assets/music/Rickroll But It's Lofi.mp3"
+  let rick = new Audio('assets/music/Rickroll But It\'s Lofi.mp3');
+
+
+  function playrick(){
+
+    let x = document.documentElement.clientWidth;
+    let y = document.documentElement.clientHeight;
+    
+    if(x >= 3000 || y >= 3000){
+      rick.play();
+      rick.loop = true;
+    }else if(x <= 3000 || y <= 3000){
+      rick.pause();
+    }
+  }
+
+</script>
+
+
+<body onresize="playrick()">
   <app-root></app-root>
 </body>
 </html>

@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { CreatePostComponent } from '../create-post/create-post.component';
-import { newPost } from 'src/newPost';
-import { HttpClientModule } from '@angular/common/http';
+import { UserPostService } from '../service/user-post.service';
+
+//fire goes brr
+import { AngularFirestore } from "@angular/fire/firestore";
+import { Post } from '../interface/post';
 
 @Component({
   selector: 'app-post',
@@ -16,8 +19,15 @@ export class PostComponent implements OnInit {
   imgBorder='assets/img/brownborder.png';
   isOn = false;
 
-  constructor() { }
+  posts!: Post[];
 
-  ngOnInit() {}
+  constructor(private uPostS: UserPostService) { }
+  
+  ngOnInit() {
+    this.uPostS.getPost().subscribe(post=>{
+      //console.log(post);
+      this.posts = post;
+    })
+  }
 
 }

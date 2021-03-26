@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
-
+import {UserPostService} from '../service/user-post.service';
+import {Post} from '../interface/post';
 
 
 @Component({
@@ -10,10 +10,29 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CreatePostComponent implements OnInit {
 
-  constructor(){}
+  post: Post = {
+    title: '',
+    description:'',
+    date:new Date(),
+    username:'',
+    id:''
+  }
+
+  constructor(private uPostS: UserPostService){
+
+  }
 
   ngOnInit(){}
 
+  onSubmit(){
+    if(this.post.title !='' && this.post.username != '' && this.post.description !=''){
+      this.uPostS.addPost(this.post);
+      this.post.title='';
+      this.post.username='';
+      this.post.description='';
+      this.post.date=new Date();
+    }
+  }
 
 }
 
