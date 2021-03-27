@@ -3,7 +3,7 @@ import { Timestamp } from 'rxjs/internal/operators/timestamp';
 
 export interface Post{
     id: string,
-    date?: Date,
+    date?: any,
     description?: string,
     title?: string,
     username?: string;

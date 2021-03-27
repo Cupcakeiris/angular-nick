@@ -12,7 +12,7 @@ import { BlogComponent } from './blog/blog.component';
 import { ContactComponent } from './contact/contact.component';
 import { CreatePostComponent } from './create-post/create-post.component';
 
-import { environment } from '../environments/environment';
+import { environment } from '../environments/environment.prod';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { UserPostService } from './service/user-post.service';

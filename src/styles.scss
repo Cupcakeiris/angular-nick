@@ -8,11 +8,32 @@ $buttonTextColor: white;
 
 $postBgColor: rgb(227, 238, 235);
 
+#warnPost{
+  background-color:$bgColor;
+  color: $buttonTextColor;
+  padding: 10px;
+  margin-top: 20px;
+  width: auto;
+  height: max-content;
+}
+
+
 #button{
   margin-top: 10px;
   width: 200px;
 }
+#header{
+  font-size: 20px;
+}
 
+#topBanner{
+  font-size: 60px;
+}
+
+.hscroll{
+  overflow: auto;
+  white-space: nowrap;
+}
 
 .submit{
   background-color: $buttonColor;
@@ -62,6 +83,18 @@ html{
   }
 }
 
+@media only screen and (max-width: 600px) {
+  body, span{
+    font-size: 11px;
+  }
+  #header{
+    font-size: 14px;
+  }
+  #topBanner{
+    font-size: 30px;
+  }
+}
+
 body{
   margin:0;
   background-size: 1200px;
@@ -71,24 +104,33 @@ body{
     padding: 1%;
     width: 150px;
     background-color:$buttonColor;
-    border:0px;
+    outline: none;
+    border: none;
     font-size: 20px;
   }
   button:hover{
     background-color: $buttonHoverColor;
   }
+
+  label{
+    word-wrap: break-word;
+  }
   
   span{
     display: block;
     word-wrap: break-word;
-    font-size: 16px;
     padding: 10px 0px;
   }
 
   textarea{
+    outline: none;
     resize: none;
     width: 80%;
     height: 100px;
+  }
+
+  input{
+    outline: none;
   }
 
 }

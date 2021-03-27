@@ -1,25 +1,22 @@
-<div class='container'>
-<button id='button' (click)=" isOn = !isOn">Create new post</button>
-<app-create-post *ngIf="isOn"></app-create-post>
+<div id='warnPost' style="text-align: center; opacity: 0.5;">
+    <label style="float: right; opacity: 0.4;">16.03.21</label>
+    <label style="color: rgb(255, 0, 0);">SYSTEM | </label>
+    <label>Please do not spam it takes so long to delete several posts :sob:</label>
+</div>
 
+
+
+<div class='container'>
+
+    <button id='button' (click)=" isOn = !isOn">Create new post</button>
+    <app-create-post *ngIf="isOn"></app-create-post>
 
     <div class="post" *ngFor="let post of posts">
-        <label style="float: right; opacity: 0.4;">{{post.date}}</label> <!--post.date.toDate() | date:'medium'-->
-        <label style="font-size:20px;"><b>{{post.title}}</b></label><br><br>
+        <label style="float: right; opacity: 0.4;">{{post.date.toDate() | date:'medium'}}</label>
+        <label id='header'><b>{{post.title}}</b></label><br><br>
         <label style="opacity: 0.7;">{{post.username}}</label><br><br>
     
         <span>{{post.description}}</span>
     </div>
 
-
-
-
-
-<div class='post'>
-    <label style="float: right; opacity: 0.4;">16.03.21 GMT: 19:26</label>
-    <label style="font-size:20px;"><b>a</b></label><br><br>
-    <label style="opacity: 0.7;">b</label><br><br>
-    
-    <span>c</span>
-</div>
 </div>

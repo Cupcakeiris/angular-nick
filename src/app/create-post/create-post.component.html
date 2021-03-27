@@ -3,13 +3,13 @@
                 <label style="font-size:20px;"><b>Create new post</b></label><br><br>
 
                 <label>Title</label><br>
-                <input type="text" name="title" [(ngModel)]="post.title"><br><br>
+                <input type="text" name="title" [(ngModel)]="post.title" maxlength="25"><br><br>
         
                 <label>Username</label><br>
-                <input type="text" name="username" [(ngModel)]="post.username"><br><br>
+                <input type="text" name="username" [(ngModel)]="post.username" maxlength="25"><br><br>
 
                 <label>Description</label><br>
-                <textarea name="description" [(ngModel)]="post.description"></textarea><br>
+                <textarea name="description" [(ngModel)]="post.description" maxlength="510"></textarea><br>
         
                 <button>Submit</button>
                 <br><br>
