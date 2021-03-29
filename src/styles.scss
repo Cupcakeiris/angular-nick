@@ -12,7 +12,6 @@ $postBgColor: rgb(227, 238, 235);
   background-color:$bgColor;
   color: $buttonTextColor;
   padding: 10px;
-  margin-top: 20px;
   width: auto;
   height: max-content;
 }
@@ -29,6 +28,79 @@ $postBgColor: rgb(227, 238, 235);
 #topBanner{
   font-size: 60px;
 }
+
+#delete{
+  float: right;
+  height: max-content;
+  width: max-content;
+  font-size: 11px;
+}
+
+/*pagination... why its so buggy, wasted 30min to fix its style bruh*/
+.ngx-pagination {
+  margin-left: 0;
+  margin-bottom: 1rem;
+  background: $bgColor;
+}
+
+.ngx-pagination .pagination-previous a::before, .ngx-pagination .pagination-previous.disabled::before {
+  content: '«';
+  display: inline-block;
+  margin-right: 2px;
+  color: white;
+}
+
+.ngx-pagination .pagination-next a::after, .ngx-pagination .pagination-next.disabled::after {
+    content: '»';
+    display: inline-block;
+    margin-left: 2px;
+    color: white;
+}
+
+.paginator span{
+  color: white;
+}
+
+.paginator{
+  text-align: right;
+}
+
+li.small-screen {
+  color: $buttonTextColor;
+}
+
+.ngx-pagination{
+  padding: 0px;
+  margin: 0px;
+}
+
+.ngx-pagination .disabled span {
+  display: none;
+}
+
+.paginator .ngx-pagination .current {
+  margin: 0px;
+}
+
+.ngx-pagination a, .ngx-pagination button {
+  margin:0px;
+}
+
+.paginator .ngx-pagination .current {
+  background: $buttonHoverColor;
+}
+
+.paginator .ngx-pagination a:hover, .ngx-pagination button:hover {
+  background:$buttonHoverColor;
+  text-decoration: none;
+}
+
+.paginator .ngx-pagination a:focus, .ngx-pagination button:focus {
+  outline: none;
+}
+/* */
+
+
 
 .hscroll{
   overflow: auto;
@@ -51,6 +123,7 @@ $postBgColor: rgb(227, 238, 235);
   margin-right: 10%;
 }
 
+
 .post{
     background-color:$postBgColor;
     border: 30px solid transparent;
@@ -70,6 +143,14 @@ html{
   color: $textColor;
 }
 
+a{
+  margin-right: 10px;
+  color: $buttonColor;
+}
+
+a:hover{
+  color:$buttonHoverColor;
+}
 
 @media only screen and (max-width: 3000px) {
   body {
@@ -80,6 +161,7 @@ html{
 @media only screen and (min-width: 3000px) {
   body {
     background-image: url('assets/img/rickroll.gif');
+
   }
 }
 
@@ -97,7 +179,7 @@ html{
 
 body{
   margin:0;
-  background-size: 1200px;
+  background-size: 1000px;
 
   button{
     color: $buttonTextColor;
@@ -120,10 +202,12 @@ body{
     display: block;
     word-wrap: break-word;
     padding: 10px 0px;
+    white-space: pre-wrap;
   }
 
   textarea{
     outline: none;
+    border: none;
     resize: none;
     width: 80%;
     height: 100px;
@@ -131,6 +215,9 @@ body{
 
   input{
     outline: none;
+    width: 35%;
+    padding: 5px 0px;
+    border: none;
   }
 
 }

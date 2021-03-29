@@ -10,6 +10,7 @@ import { map } from "rxjs/operators";
 export class UserPostService {
   postCollection!: AngularFirestoreCollection<Post>;
   post!: Observable<any[]>;
+  postDoc!: AngularFirestoreDocument<Post>;
 
   constructor(public uPost: AngularFirestore) { 
     //this.post = this.uPost.collection('userPost').valueChanges();
@@ -32,6 +33,12 @@ export class UserPostService {
   addPost(post: Post){
     this.postCollection.add(post);
   }
+
+  deletePost(post: Post){
+    this.postDoc = this.uPost.doc(`post/${post.id}`);
+    this.postDoc.delete();
+  }
+
 }
 
 

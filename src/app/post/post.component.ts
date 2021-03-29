@@ -16,6 +16,15 @@ import { Post } from '../interface/post';
 
 export class PostComponent implements OnInit {
 
+  p: number =1;
+
+  public responsive: boolean = true;
+  public labels: any = {
+      previousLabel: ' ',
+      nextLabel: ' ',
+  };
+
+
   imgBorder='assets/img/brownborder.png';
   isOn = false;
 
@@ -29,5 +38,7 @@ export class PostComponent implements OnInit {
       this.posts = post;
     })
   }
-
+  deletePost(event:any, post:any){
+    this.uPostS.deletePost(post);
+  }
 }

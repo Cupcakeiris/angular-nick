@@ -1,22 +1,45 @@
-<div id='warnPost' style="text-align: center; opacity: 0.5;">
-    <label style="float: right; opacity: 0.4;">16.03.21</label>
-    <label style="color: rgb(255, 0, 0);">SYSTEM | </label>
-    <label>Please do not spam it takes so long to delete several posts :sob:</label>
+<div>
+    <pagination-controls (pageChange)="p = $event" class="paginator"
+        [previousLabel]="labels.previousLabel"
+        [nextLabel]="labels.nextLabel"
+        [responsive]="responsive">
+    </pagination-controls>
 </div>
 
 
 
+<div id='warnPost' style="opacity: 0.5;">
+    <marquee behavior="scroll" direction="left">
+        <label style="color: rgb(255, 0, 0);">SYSTEM | </label>
+        <label>Please do not spam it takes so long to delete several posts :sob:</label>
+    </marquee>
+</div>
+
+
 <div class='container'>
 
-    <button id='button' (click)=" isOn = !isOn">Create new post</button>
-    <app-create-post *ngIf="isOn"></app-create-post>
+<button id='button' (click)=" isOn = !isOn">Create new post</button>
+<app-create-post *ngIf="isOn"></app-create-post>
 
-    <div class="post" *ngFor="let post of posts">
-        <label style="float: right; opacity: 0.4;">{{post.date.toDate() | date:'medium'}}</label>
-        <label id='header'><b>{{post.title}}</b></label><br><br>
-        <label style="opacity: 0.7;">{{post.username}}</label><br><br>
-    
-        <span>{{post.description}}</span>
+
+    <div class="post" *ngFor="let post of posts | paginate: {itemsPerPage: 6,
+        currentPage: p}">
+            <button class='admin' id='delete' (dblclick)="deletePost($event, post)">X</button>
+            
+            <label id='header'><b>{{post.title}}</b></label>
+            <label style="opacity: 0.4; margin-left: 15px;">{{post.date.toDate() | date: 'dd/MM/YYYY'}}</label><br><br>
+            
+            <label style="opacity: 0.7;">{{post.username}}</label><br><br>
+        
+            <span>{{post.description}}</span>
     </div>
 
+</div>
+
+<div style="margin-top: 10px;">
+    <pagination-controls (pageChange)="p = $event" class="paginator"
+        [previousLabel]="labels.previousLabel"
+        [nextLabel]="labels.nextLabel"
+        [responsive]="responsive">
+    </pagination-controls>
 </div>

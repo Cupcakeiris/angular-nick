@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {ChangelogComponent} from '../changelog/changelog.component';
 
 @Component({
   selector: 'app-home',

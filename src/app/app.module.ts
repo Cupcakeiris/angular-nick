@@ -16,6 +16,8 @@ import { environment } from '../environments/environment.prod';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { UserPostService } from './service/user-post.service';
+import {NgxPaginationModule} from 'ngx-pagination';
+import { ChangelogComponent } from './changelog/changelog.component';
 
 
 @NgModule({
@@ -27,14 +29,16 @@ import { UserPostService } from './service/user-post.service';
     VideoComponent,
     BlogComponent,
     ContactComponent,
-    CreatePostComponent
+    CreatePostComponent,
+    ChangelogComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFireDatabaseModule
+    AngularFireDatabaseModule,
+    NgxPaginationModule
   ],
   providers: [UserPostService],
   bootstrap: [AppComponent]
