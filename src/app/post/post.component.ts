@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CreatePostComponent } from '../create-post/create-post.component';
 import { UserPostService } from '../service/user-post.service';
+import {AuthService} from '../service/auth.service';
 
 //fire goes brr
 import { AngularFirestore } from "@angular/fire/firestore";
@@ -30,7 +31,7 @@ export class PostComponent implements OnInit {
 
   posts!: Post[];
 
-  constructor(private uPostS: UserPostService) { }
+  constructor(private uPostS: UserPostService, public authService: AuthService) { }
   
   ngOnInit() {
     this.uPostS.getPost().subscribe(post=>{

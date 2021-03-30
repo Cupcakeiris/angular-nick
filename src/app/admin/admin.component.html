@@ -1,14 +1,15 @@
 
 <div class="container">
 <div class="post" style="text-align: center;">
-    <label>Prove your adminness</label><br><br>
-    <pre>if u login with non-admin gmail i (alkano) can see it in my db
-        if u dont have admin's gmail please do not risk to reveal ur gmail's name to the site creator
-        even if its fake gmail
+    <pre>
+    still in developement
+    idk how u got url to get admin role
+    but please dont ruin site :sob:
     </pre>
-    <button (click)="authService.GoogleAuth()" style="height:max-content; width: max-content; font-size: 12px;">
+    <button (click)="authService.login()" style="height:max-content; width: max-content; font-size: 12px; ">
         login
     </button>
-    <button (click)="authService.signOut()" style="height:max-content; width: max-content; font-size: 12px; margin-left: 15px;">logout</button>
+    <button (click)="authService.logout()" style="height:max-content; width: max-content; font-size: 12px; margin-left: 5px;">logout</button><br>
+    <pre *ngIf="authService.auth.user | async as user;" style="color: red;">uid: {{id}}</pre>
 </div>
 </div>

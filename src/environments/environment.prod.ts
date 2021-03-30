@@ -1,7 +1,7 @@
 export const environment = {
   production: false,
 
-  path: 'richladmin',
+  path: 'richladminNnH0RDNbpmJdnLw9DcKy5',
 
   firebase: {
     apiKey: "AIzaSyCMuzTYjB6dEhncGDVrzGRDHQZfhKWndUs",

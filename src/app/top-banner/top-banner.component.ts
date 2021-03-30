@@ -9,12 +9,6 @@ export class TopBannerComponent implements OnInit {
 
   imgSRC = 'assets/img/logo.png';
  
-
-
-
-
-
-
   constructor() { }
 
   ngOnInit(): void {

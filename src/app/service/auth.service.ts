@@ -1,34 +1,29 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
+import * as firebase from 'firebase';
 import app from 'firebase';
 import 'firebase/auth';
+import { User } from '../interface/auth';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
-  constructor(
-    public afAuth: AngularFireAuth, // Inject Firebase auth service
-  ) { }
 
-  // Sign in with Google
-  GoogleAuth() {
-    return this.AuthLogin(new app.auth.GoogleAuthProvider());
-  }  
 
-  // Auth logic to run auth providers
-  AuthLogin(provider: app.auth.GoogleAuthProvider) {
-    return this.afAuth.signInWithPopup(provider)
-    .then((result: any) => {
-        console.log('You have been successfully logged in')
-    }).catch((error) => {
-        console.log(error)
-    })
+  user!: any
+  constructor(public auth: AngularFireAuth) {  
+    
   }
 
-  signOut() {
-    this.afAuth.signOut()
+  login() {
+    this.auth.signInWithPopup(new app.auth.GoogleAuthProvider());
+    this.user = app.auth().currentUser!.uid //AND THIS TOOK ME WHOLE DAY, PROBLEM WAS TO ADD ! NEXT TO currentUser. JUST BRUH
+  }
+  logout() {
+    this.auth.signOut();
   }
 }     
 
