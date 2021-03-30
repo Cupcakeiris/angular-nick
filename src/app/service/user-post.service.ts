@@ -35,7 +35,7 @@ export class UserPostService {
   }
 
   deletePost(post: Post){
-    this.postDoc = this.uPost.doc(`post/${post.id}`);
+    this.postDoc = this.uPost.doc(`userPost/${post.id}`);
     this.postDoc.delete();
   }
 

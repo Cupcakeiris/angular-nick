@@ -1,6 +1,8 @@
 export const environment = {
   production: false,
 
+  path: 'richladmin',
+
   firebase: {
     apiKey: "AIzaSyCMuzTYjB6dEhncGDVrzGRDHQZfhKWndUs",
     authDomain: "edgermanflex.firebaseapp.com",
@@ -10,5 +12,7 @@ export const environment = {
     appId: "1:750551364660:web:c2f187993386a514030661",
     measurementId: "G-QFV8YS5F3G"
   }
+
+
 };
 

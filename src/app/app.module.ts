@@ -18,7 +18,9 @@ import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { UserPostService } from './service/user-post.service';
 import {NgxPaginationModule} from 'ngx-pagination';
 import { ChangelogComponent } from './changelog/changelog.component';
+import { AdminComponent } from './admin/admin.component';
 
+import "firebase/auth";
 
 @NgModule({
   declarations: [
@@ -30,13 +32,14 @@ import { ChangelogComponent } from './changelog/changelog.component';
     BlogComponent,
     ContactComponent,
     CreatePostComponent,
-    ChangelogComponent
+    ChangelogComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     AppRoutingModule,
-    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireModule.initializeApp(environment.firebase, "angular-auth-firebase"),
     AngularFireDatabaseModule,
     NgxPaginationModule
   ],

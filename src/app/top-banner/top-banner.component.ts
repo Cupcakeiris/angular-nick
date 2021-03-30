@@ -8,10 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class TopBannerComponent implements OnInit {
 
   imgSRC = 'assets/img/logo.png';
-  page(url: string){
-    window.open(url, "_blank");
-  } 
-
+ 
 
 
 

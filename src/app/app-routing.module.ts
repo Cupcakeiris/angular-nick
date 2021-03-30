@@ -7,6 +7,8 @@ import { CreatePostComponent } from './create-post/create-post.component';
 import { HomeComponent } from './home/home.component';
 import { PostComponent } from './post/post.component';
 import { VideoComponent } from './video/video.component';
+import {AdminComponent} from './admin/admin.component';
+import {environment} from '../environments/environment.prod';
 
 const routes: Routes = [
   { path:'', component: HomeComponent },
@@ -14,7 +16,8 @@ const routes: Routes = [
   { path:'video', component: VideoComponent},
   { path:'blog', component: BlogComponent},
   { path:'contact', component: ContactComponent},
-  { path:'changelog', component: ChangelogComponent}
+  { path:'changelog', component: ChangelogComponent},
+  { path:environment.path, component: AdminComponent}
 ];
 
 @NgModule({

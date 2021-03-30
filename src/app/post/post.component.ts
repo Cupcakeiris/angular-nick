@@ -38,7 +38,7 @@ export class PostComponent implements OnInit {
       this.posts = post;
     })
   }
-  deletePost(event:any, post:any){
+  delete(event:any, post:any){
     this.uPostS.deletePost(post);
   }
 }
