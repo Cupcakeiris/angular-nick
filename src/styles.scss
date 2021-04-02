@@ -46,36 +46,20 @@ $postBgColor: rgb(227, 238, 235);
 /*search*/
 .search {
   width: 100%;
-  position: relative;
   display: flex;
+  justify-content: center;
 }
 
 .searchTerm {
-  width: 100%;
+  width: 50vw;
   border: 3px solid $buttonColor;
   border-right: none;
-  padding: 5px;
   height: 24px;
   border-radius: 5px 0 0 5px;
   outline: none;
+  padding: 5px;
 }
 
-
-.searchButton {
-  width: 40px;
-  height: 40px;
-  border: 1px solid $buttonColor;
-  border-radius: 0 5px 5px 0;
-  cursor: pointer;
-  font-size: 20px;
-}
-
-/*Resize the wrap to see the search bar change!*/
-.wrap{
-  width: 50vw;
-  top: 50%;
-  left: 50%;
-}
 /**/
 
 #button{

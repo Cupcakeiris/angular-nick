@@ -5,7 +5,12 @@ import {AuthService} from '../service/auth.service';
 import {SearchBarComponent} from '../search-bar/search-bar.component';
 
 import { AngularFirestore } from "@angular/fire/firestore";
-import { Post } from '../interface/post';
+import { Post } from '../interface/post';    
+import { filter } from 'rxjs/operators';
+import { Output } from '@angular/core';
+import { EventEmitter } from '@angular/core';
+import { Input } from '@angular/core';
+import { ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-post',
@@ -31,8 +36,15 @@ export class PostComponent implements OnInit {
 
   posts!: Post[];
 
-  constructor(private uPostS: UserPostService, public authService: AuthService) { }
+  constructor(private uPostS: UserPostService, public authService: AuthService ) { }
   
+  search!:string;
+  //gets variable from search-bar.component
+  receiveMessage($event: string) {
+    this.search = $event
+  }
+
+
   ngOnInit() {
     //gets all posts from db when site is just initialized
     this.uPostS.getPost().subscribe(post=>{
@@ -43,4 +55,6 @@ export class PostComponent implements OnInit {
   delete(event:any, post:any){
     this.uPostS.deletePost(post);
   }
+  
+
 }

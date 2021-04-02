@@ -23,6 +23,8 @@ import { AdminComponent } from './admin/admin.component';
 
 import "firebase/auth";
 import { SearchBarComponent } from './search-bar/search-bar.component';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+
 
 @NgModule({
   declarations: [
@@ -46,7 +48,8 @@ import { SearchBarComponent } from './search-bar/search-bar.component';
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebase, "angular-auth-firebase"),
     AngularFireDatabaseModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    Ng2SearchPipeModule
   ],
   providers: [UserPostService],
   bootstrap: [AppComponent]

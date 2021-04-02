@@ -8,7 +8,7 @@
 
 
 <div class='container' style="text-align: center;">
-    <app-search-bar></app-search-bar><br><br>
+    <app-search-bar (messageEvent)="receiveMessage($event)"></app-search-bar><br><br>
 </div>
 
 
@@ -26,8 +26,8 @@
 <button id='button' (click)=" isOn = !isOn">Create new post</button>
 <app-create-post *ngIf="isOn"></app-create-post>
     
-    <!--Angular's inbuild loop for html-->
-    <div class="post" *ngFor="let post of posts | paginate: {itemsPerPage: 10,
+    <!--Angular's inbuild loop for html-->      <!--Filter and pagination package pipes-->
+    <div class="post" *ngFor="let post of posts  | filter:search | paginate: {itemsPerPage: 10,
         currentPage: p}">
             <!--shows delete button if any user is registered to site
                 however it will be changed in the future
@@ -43,12 +43,4 @@
             <span>{{post.description}}</span>
     </div>
 
-</div>
-
-<div style="margin-top: 10px;">
-    <pagination-controls (pageChange)="p = $event" class="paginator"
-        [previousLabel]="labels.previousLabel"
-        [nextLabel]="labels.nextLabel"
-        [responsive]="responsive">
-    </pagination-controls>
 </div>
