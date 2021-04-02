@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { CreatePostComponent } from '../create-post/create-post.component';
 import { UserPostService } from '../service/user-post.service';
 import {AuthService} from '../service/auth.service';
+import {SearchBarComponent} from '../search-bar/search-bar.component';
 
-//fire goes brr
 import { AngularFirestore } from "@angular/fire/firestore";
 import { Post } from '../interface/post';
 
@@ -16,7 +16,7 @@ import { Post } from '../interface/post';
 
 
 export class PostComponent implements OnInit {
-
+  //pagination's custom properties
   p: number =1;
 
   public responsive: boolean = true;
@@ -34,6 +34,7 @@ export class PostComponent implements OnInit {
   constructor(private uPostS: UserPostService, public authService: AuthService) { }
   
   ngOnInit() {
+    //gets all posts from db when site is just initialized
     this.uPostS.getPost().subscribe(post=>{
       //console.log(post);
       this.posts = post;

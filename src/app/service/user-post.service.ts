@@ -17,6 +17,8 @@ export class UserPostService {
 
     this.postCollection=this.uPost.collection('userPost', ref => ref.orderBy('date', 'desc'));
 
+    //if user enters values and presses submit button this code sends entered values directly to firestore.
+    //rather than using valueChanges() it gets all properties of our collection
     this.post = this.postCollection.snapshotChanges().pipe(map(changes => {
       return changes.map(a=>{
         const data = a.payload.doc.data() as Post

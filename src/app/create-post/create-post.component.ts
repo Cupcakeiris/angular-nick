@@ -23,7 +23,7 @@ export class CreatePostComponent implements OnInit {
   }
 
   ngOnInit(){}
-
+  //submits data to db
   onSubmit(){
     if(this.post.title !='' && this.post.username != '' && this.post.description !=''){
       this.uPostS.addPost(this.post);

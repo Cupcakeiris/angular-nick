@@ -7,6 +7,11 @@
 </div>
 
 
+<div class='container' style="text-align: center;">
+    <app-search-bar></app-search-bar><br><br>
+</div>
+
+
 
 <div id='warnPost' style="opacity: 0.5;">
     <marquee behavior="scroll" direction="left">
@@ -20,10 +25,14 @@
 
 <button id='button' (click)=" isOn = !isOn">Create new post</button>
 <app-create-post *ngIf="isOn"></app-create-post>
-
-
-    <div class="post" *ngFor="let post of posts | paginate: {itemsPerPage: 6,
+    
+    <!--Angular's inbuild loop for html-->
+    <div class="post" *ngFor="let post of posts | paginate: {itemsPerPage: 10,
         currentPage: p}">
+            <!--shows delete button if any user is registered to site
+                however it will be changed in the future
+                it should purposed only for admin roles
+            -->
             <button *ngIf="authService.auth.user | async as user;" id='delete' (click)="delete($event, post)">X</button>
             
             <label id='header'><b>{{post.title}}</b></label>

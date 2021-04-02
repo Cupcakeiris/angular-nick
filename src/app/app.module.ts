@@ -1,3 +1,4 @@
+ //all importantcomponents and packages
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
@@ -21,9 +22,11 @@ import { ChangelogComponent } from './changelog/changelog.component';
 import { AdminComponent } from './admin/admin.component';
 
 import "firebase/auth";
+import { SearchBarComponent } from './search-bar/search-bar.component';
 
 @NgModule({
   declarations: [
+    //declaring all components that are gonna be used for site
     AppComponent,
     TopBannerComponent,
     PostComponent,
@@ -33,9 +36,11 @@ import "firebase/auth";
     ContactComponent,
     CreatePostComponent,
     ChangelogComponent,
-    AdminComponent
+    AdminComponent,
+    SearchBarComponent
   ],
   imports: [
+    //declaring modules
     BrowserModule,
     FormsModule,
     AppRoutingModule,

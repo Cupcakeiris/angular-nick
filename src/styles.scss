@@ -8,6 +8,33 @@ $buttonTextColor: white;
 
 $postBgColor: rgb(227, 238, 235);
 
+
+
+@media only screen and (max-width: 3000px) {
+  body {
+    background-image: url('assets/img/patterndark.png');
+  }
+}
+
+@media only screen and (min-width: 3000px) {
+  body {
+    background-image: url('assets/img/rickroll.gif');
+
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  body, span{
+    font-size: 11px;
+  }
+  #header{
+    font-size: 14px;
+  }
+  #topBanner{
+    font-size: 30px;
+  }
+}
+
 #warnPost{
   background-color:$bgColor;
   color: $buttonTextColor;
@@ -16,6 +43,40 @@ $postBgColor: rgb(227, 238, 235);
   height: max-content;
 }
 
+/*search*/
+.search {
+  width: 100%;
+  position: relative;
+  display: flex;
+}
+
+.searchTerm {
+  width: 100%;
+  border: 3px solid $buttonColor;
+  border-right: none;
+  padding: 5px;
+  height: 24px;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+}
+
+
+.searchButton {
+  width: 40px;
+  height: 40px;
+  border: 1px solid $buttonColor;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+/*Resize the wrap to see the search bar change!*/
+.wrap{
+  width: 50vw;
+  top: 50%;
+  left: 50%;
+}
+/**/
 
 #button{
   margin-top: 10px;
@@ -152,31 +213,6 @@ a:hover{
   color:$buttonHoverColor;
 }
 
-@media only screen and (max-width: 3000px) {
-  body {
-    background-image: url('assets/img/patterndark.png');
-  }
-}
-
-@media only screen and (min-width: 3000px) {
-  body {
-    background-image: url('assets/img/rickroll.gif');
-
-  }
-}
-
-@media only screen and (max-width: 600px) {
-  body, span{
-    font-size: 11px;
-  }
-  #header{
-    font-size: 14px;
-  }
-  #topBanner{
-    font-size: 30px;
-  }
-}
-
 body{
   margin:0;
   background-size: 1000px;
@@ -224,4 +260,4 @@ body{
 
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; font-size: 14px;}

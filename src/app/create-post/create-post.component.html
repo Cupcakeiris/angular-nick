@@ -1,7 +1,7 @@
 <div class="post">
         <form (ngSubmit)="onSubmit()">
                 <label style="font-size:20px;"><b>Create new post</b></label><br><br>
-
+                <!--binding with ts file with [(ngModel)]-->
                 <label>Title</label><br>
                 <input type="text" name="title" [(ngModel)]="post.title" maxlength="25"><br><br>
         

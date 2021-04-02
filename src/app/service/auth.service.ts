@@ -4,6 +4,8 @@ import * as firebase from 'firebase';
 import app from 'firebase';
 import 'firebase/auth';
 import { User } from '../interface/auth';
+import 'firebase/firestore';
+
 
 
 @Injectable({
@@ -15,12 +17,12 @@ export class AuthService {
 
   user!: any
   constructor(public auth: AngularFireAuth) {  
-    
+    app.initializeApp(auth)
   }
 
   login() {
     this.auth.signInWithPopup(new app.auth.GoogleAuthProvider());
-    this.user = app.auth().currentUser!.uid //AND THIS TOOK ME WHOLE DAY, PROBLEM WAS TO ADD ! NEXT TO currentUser. JUST BRUH
+    //return this.user = app.auth().currentUser!.uid //currently it gives error: Cannot define 'uid' of null
   }
   logout() {
     this.auth.signOut();
