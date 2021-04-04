@@ -4,13 +4,8 @@ import { UserPostService } from '../service/user-post.service';
 import {AuthService} from '../service/auth.service';
 import {SearchBarComponent} from '../search-bar/search-bar.component';
 
-import { AngularFirestore } from "@angular/fire/firestore";
+
 import { Post } from '../interface/post';    
-import { filter } from 'rxjs/operators';
-import { Output } from '@angular/core';
-import { EventEmitter } from '@angular/core';
-import { Input } from '@angular/core';
-import { ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-post',
@@ -29,7 +24,6 @@ export class PostComponent implements OnInit {
       previousLabel: ' ',
       nextLabel: ' ',
   };
-
 
   imgBorder='assets/img/brownborder.png';
   isOn = false;

@@ -1,8 +1,48 @@
-<div class='container'>
-<div class="post">
-    <label style="float: right; opacity: 0.4;">xx.xx.xx</label>
-    <label style="font-size:20px;"><b>Blog</b></label><br><br>
-
-    <span>Will add later (mega later)</span>
+<div>
+    <pagination-controls (pageChange)="p = $event" class="paginator"
+        [previousLabel]="labels.previousLabel"
+        [nextLabel]="labels.nextLabel"
+        [responsive]="responsive">
+    </pagination-controls>
 </div>
+
+<div class='container' style="text-align: center;">
+    <app-search-bar (messageEvent)="receiveMessage($event)"></app-search-bar><br><br>
+</div>
+
+
+
+<div class='container'>
+    <button id='button' (click)=" isOn = !isOn" *ngIf="authService.auth.user | async as user;">Create new post</button>
+    <!--importing from create-post component caused troubles, so copy pasted its codes here -->
+    <div class="post" *ngIf='isOn'>
+        <form (ngSubmit)="onSubmit()">
+                <label style="font-size:20px;"><b>Create new post</b></label><br><br>
+                <label>Title</label><br>
+                <input type="text" name="title" [(ngModel)]="post.title" maxlength="50"><br><br>
+        
+                <label>Username</label><br>
+                <input type="text" name="username" [(ngModel)]="post.username" maxlength="25"><br><br>
+
+                <label>Description</label><br>
+                <textarea name="description" [(ngModel)]="post.description" maxlength="1000"></textarea><br><br>
+        
+                <button>Submit</button>
+                <br><br>
+        </form>
+</div>
+
+
+    <div class="post" *ngFor="let post of posts| filter:search | paginate: {itemsPerPage: 10,
+        currentPage: p}">
+
+            <button *ngIf="authService.auth.user | async as user;" id='delete' (click)="delete($event, post)">X</button>
+            
+            <label id='header'><b>{{post.title}}</b></label>
+            <label style="opacity: 0.4; margin-left: 5px;">{{post.date.toDate() | date: 'dd/MM/YYYY HH:mm'}}</label><br><br>
+            
+            <label style="opacity: 0.7;">{{post.username}}</label><br><br>
+        
+            <span>{{post.description}}</span>
+    </div>
 </div>

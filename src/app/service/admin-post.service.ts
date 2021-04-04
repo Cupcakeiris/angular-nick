@@ -7,18 +7,16 @@ import { map } from "rxjs/operators";
 @Injectable({
   providedIn: 'root'
 })
-export class UserPostService {
+export class AdminPostService {
+
   postCollection!: AngularFirestoreCollection<Post>;
   post!: Observable<any[]>;
   postDoc!: AngularFirestoreDocument<Post>;
 
-  constructor(public uPost: AngularFirestore) { 
-    //this.post = this.uPost.collection('userPost').valueChanges();
+  constructor(public aPost: AngularFirestore) {
+    this.postCollection=this.aPost.collection('adminPost', ref => ref.orderBy('date', 'desc'));
 
-    this.postCollection=this.uPost.collection('userPost', ref => ref.orderBy('date', 'desc'));
-
-    //if user enters values and presses submit button this code sends entered values directly to firestore.
-    //rather than using valueChanges() it gets all properties of our collection
+    //same principle as user post
     this.post = this.postCollection.snapshotChanges().pipe(map(changes => {
       return changes.map(a=>{
         const data = a.payload.doc.data() as Post
@@ -37,11 +35,7 @@ export class UserPostService {
   }
 
   deletePost(post: Post){
-    this.postDoc = this.uPost.doc(`userPost/${post.id}`);
+    this.postDoc = this.aPost.doc(`adminPost/${post.id}`);
     this.postDoc.delete();
   }
-
-}
-
-
-
+  }

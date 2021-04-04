@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {UserPostService} from '../service/user-post.service';
+import {AdminPostService} from '../service/admin-post.service';
 import {Post} from '../interface/post';
 
 
@@ -18,12 +19,12 @@ export class CreatePostComponent implements OnInit {
     id:''
   }
 
-  constructor(private uPostS: UserPostService){
+  constructor(private uPostS: UserPostService, private aPostS: AdminPostService){
 
   }
 
   ngOnInit(){}
-  //submits data to db
+  //same principle as userpost
   onSubmit(){
     if(this.post.title !='' && this.post.username != '' && this.post.description !=''){
       this.uPostS.addPost(this.post);
@@ -33,6 +34,7 @@ export class CreatePostComponent implements OnInit {
       this.post.date=new Date();
     }
   }
+
 
 }
 

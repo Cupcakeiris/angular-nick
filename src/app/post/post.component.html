@@ -36,7 +36,7 @@
             <button *ngIf="authService.auth.user | async as user;" id='delete' (click)="delete($event, post)">X</button>
             
             <label id='header'><b>{{post.title}}</b></label>
-            <label style="opacity: 0.4; margin-left: 5px;">{{post.date.toDate() | date: 'dd/MM/YYYY'}}</label><br><br>
+            <label style="opacity: 0.4; margin-left: 5px;">{{post.date.toDate() | date: 'dd/MM/YYYY HH:mm'}}</label><br><br>
             
             <label style="opacity: 0.7;">{{post.username}}</label><br><br>
         
