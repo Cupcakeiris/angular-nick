@@ -29,10 +29,10 @@
     <!--Angular's inbuild loop for html-->      <!--Filter and pagination package pipes-->
     <div class="post" *ngFor="let post of posts  | filter:search | paginate: {itemsPerPage: 10,
         currentPage: p}">
-            <!--shows delete button if any user is registered to site
-                however it will be changed in the future
-                it should purposed only for admin roles
+            <!--shows delete button if user has admin role
+                however it might be changed in the future
             -->
+            
             <button *ngIf="authService.auth.user | async as user;" id='delete' (click)="delete($event, post)">X</button>
             
             <label id='header'><b>{{post.title}}</b></label>
@@ -41,6 +41,10 @@
             <label style="opacity: 0.7;">{{post.username}}</label><br><br>
         
             <span>{{post.description}}</span>
+            <img class="file" [src]="post.file | safe" alt=''>
+
+
+
     </div>
 
 </div>

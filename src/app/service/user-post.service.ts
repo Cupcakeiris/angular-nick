@@ -29,15 +29,15 @@ export class UserPostService {
   }
 
   getPost(){
-    return this.post;
+    return this.post; //gets all data from db
   }
 
   addPost(post: Post){
-    this.postCollection.add(post);
+    this.postCollection.add(post); //stores user's datas
   }
 
   deletePost(post: Post){
-    this.postDoc = this.uPost.doc(`userPost/${post.id}`);
+    this.postDoc = this.uPost.doc(`userPost/${post.id}`); //deletes data in db
     this.postDoc.delete();
   }
 

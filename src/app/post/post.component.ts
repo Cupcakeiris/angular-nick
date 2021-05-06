@@ -4,7 +4,6 @@ import { UserPostService } from '../service/user-post.service';
 import {AuthService} from '../service/auth.service';
 import {SearchBarComponent} from '../search-bar/search-bar.component';
 
-
 import { Post } from '../interface/post';    
 
 @Component({
@@ -29,6 +28,7 @@ export class PostComponent implements OnInit {
   isOn = false;
 
   posts!: Post[];
+
 
   constructor(private uPostS: UserPostService, public authService: AuthService ) { }
   

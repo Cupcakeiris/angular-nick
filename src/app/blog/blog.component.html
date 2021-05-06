@@ -26,6 +26,10 @@
 
                 <label>Description</label><br>
                 <textarea name="description" [(ngModel)]="post.description" maxlength="1000"></textarea><br><br>
+
+                
+                <label>Custom image</label><br>
+                <input type="text" name="file" [(ngModel)]="post.file" maxlength="255" placeholder="Paste it's link"><br><br><br>
         
                 <button>Submit</button>
                 <br><br>
@@ -44,5 +48,8 @@
             <label style="opacity: 0.7;">{{post.username}}</label><br><br>
         
             <span>{{post.description}}</span>
+
+            <img class="file" [src]="post.file | safe" alt=''>
+
     </div>
 </div>

@@ -10,6 +10,9 @@
 
                 <label>Description</label><br>
                 <textarea name="description" [(ngModel)]="post.description" maxlength="510"></textarea><br><br>
+                
+                <label>Custom image</label><br>
+                <input type="text" name="file" [(ngModel)]="post.file" maxlength="255" placeholder="Paste it's link"><br><br><br>
         
                 <button>Submit</button>
                 <br><br>

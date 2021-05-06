@@ -30,7 +30,8 @@ export class BlogComponent implements OnInit {
     description:'',
     date:new Date(),
     username:'',
-    id:''
+    id:'',
+    file:''
   }
 
   constructor(private aPostS: AdminPostService,  public authService: AuthService ) { }
@@ -45,6 +46,7 @@ export class BlogComponent implements OnInit {
       this.post.username='';
       this.post.description='';
       this.post.date=new Date();
+      this.post.file='';
     }
   }
 

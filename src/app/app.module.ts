@@ -24,6 +24,8 @@ import { AdminComponent } from './admin/admin.component';
 import "firebase/auth";
 import { SearchBarComponent } from './search-bar/search-bar.component';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { SafePipe } from './pipe/safe';
+
 
 
 @NgModule({
@@ -39,7 +41,8 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
     CreatePostComponent,
     ChangelogComponent,
     AdminComponent,
-    SearchBarComponent
+    SearchBarComponent,
+    SafePipe
   ],
   imports: [
     //declaring modules
@@ -49,7 +52,7 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
     AngularFireModule.initializeApp(environment.firebase, "angular-auth-firebase"),
     AngularFireDatabaseModule,
     NgxPaginationModule,
-    Ng2SearchPipeModule
+    Ng2SearchPipeModule,
   ],
   providers: [UserPostService],
   bootstrap: [AppComponent]

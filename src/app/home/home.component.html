@@ -1,5 +1,18 @@
-<div class="container">
+<script>
+    $(document).ready(function() {
+     $.getJSON("https://api.countapi.xyz/hit/edgermanflex.web.app/visits", function(response) {
+        $("#visits").text(response.value);
+     });
+      $("#visits").text('alo');
+    });
+</script>
 
+
+<div class="container">
+    <div class="post">
+        <label><b>Count test:</b></label>
+        <label id="visits">0 (why its not working :sob:)</label>
+    </div>
     <div class="post">
         <label style="font-size:20px;"><b>12 cookies in this site</b></label><br><br>
         <label>Youtube videos are adding 10 cookies to site, however only 2 cookies are used to store your inputs to online database</label><br>
@@ -8,11 +21,11 @@
 
     <div class="post">
         <label style="font-size:20px;"><b>Special thanks go to:</b></label><br><br>
-    
+
         <ul>
-            <li>Alkano - for using Angular and making mega omega cool site</li>
-            <li>Resty - for making magic tricks and suffering from Alka's dumb questions</li>
-            <li>Nick - for being Alkano's best client ever and keeping her company</li>
+            <li>Altyn - for using Angular and making mega cool site</li>
+            <li>Resty - for suffering from Altyn's dumb questions</li>
+            <li>Nick - for being Altyn's best client ever and keeping her company</li>
         </ul>
     </div>
 
@@ -21,3 +34,4 @@
     </div>
 
 </div>
+

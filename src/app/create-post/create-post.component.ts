@@ -16,7 +16,8 @@ export class CreatePostComponent implements OnInit {
     description:'',
     date:new Date(),
     username:'',
-    id:''
+    id:'',
+    file:''
   }
 
   constructor(private uPostS: UserPostService, private aPostS: AdminPostService){
@@ -32,6 +33,7 @@ export class CreatePostComponent implements OnInit {
       this.post.username='';
       this.post.description='';
       this.post.date=new Date();
+      this.post.file='';
     }
   }
 

@@ -15,10 +15,17 @@ export class SearchBarComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  searchWord!: string;
+  searchWord!: string; //user's searching word in input
+  amog=false
+  
+  amogus(){
+    if(this.searchWord == "amogus"){
+      this.amog=true;
+    }
+  }
 
   @Output() messageEvent = new EventEmitter<string>();
-
+  //@Output is used send input data to another components
   sendMessage() {
     this.messageEvent.emit(this.searchWord)
   }
