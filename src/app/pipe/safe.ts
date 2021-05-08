@@ -1,4 +1,4 @@
-//this is custom pipe to ensure connecting security, used existing codes
+//this is custom pipe to ensure connecting security
 import { Pipe, PipeTransform } from '@angular/core';
 import { DomSanitizer} from '@angular/platform-browser';
 

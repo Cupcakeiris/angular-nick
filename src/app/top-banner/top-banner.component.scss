@@ -4,20 +4,6 @@ $bottomBorderColor: rgb(57, 141, 109);
 
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu+Condensed&display=swap');
 
-@media only screen and (max-width: 800px) {
-    #logo{
-      display: none;
-    }
-}
-    
-@media only screen and (max-width: 700px) {
-    button {
-    width: 100px;
-    height:50px;
-    }
-}
-
-
 .topBanner{
     font-family: 'Ubuntu Condensed', sans-serif;
     color: $textColor;
@@ -35,3 +21,22 @@ $bottomBorderColor: rgb(57, 141, 109);
     float: left;
     position: absolute;
 }
+#logo:hover{
+    -webkit-transform: scaleX(-1);
+    -moz-transform: scaleX(-1);
+    transform: scaleX(-1);
+}
+
+
+@media (max-width: 800px) {
+    #logo{
+      display: none;
+    }
+    button{
+        display:inline;
+        width: 100px;
+        height: 40px;
+        font-size: 16px;
+    }
+}
+

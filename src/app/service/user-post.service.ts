@@ -33,7 +33,7 @@ export class UserPostService {
   }
 
   addPost(post: Post){
-    this.postCollection.add(post); //stores user's datas
+    this.postCollection.add(post); //stores user's datas 
   }
 
   deletePost(post: Post){

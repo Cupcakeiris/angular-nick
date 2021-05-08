@@ -1,17 +1,17 @@
 <div class="post">
         <form (ngSubmit)="onSubmit()">
-                <label style="font-size:20px;"><b>Create new post</b></label><br><br>
+                <label id="header"><b>Create new post</b></label><br><br>
                 <!--binding with ts file with [(ngModel)]-->
-                <label>Title</label><br>
+                <label class="mobileText">Title</label><br>
                 <input type="text" name="title" [(ngModel)]="post.title" maxlength="25"><br><br>
         
-                <label>Username</label><br>
+                <label class="mobileText">Username</label><br>
                 <input type="text" name="username" [(ngModel)]="post.username" maxlength="25"><br><br>
 
-                <label>Description</label><br>
+                <label class="mobileText">Description</label><br>
                 <textarea name="description" [(ngModel)]="post.description" maxlength="510"></textarea><br><br>
                 
-                <label>Custom image</label><br>
+                <label class="mobileText">Custom image</label><br>
                 <input type="text" name="file" [(ngModel)]="post.file" maxlength="255" placeholder="Paste it's link"><br><br><br>
         
                 <button>Submit</button>

@@ -25,6 +25,8 @@ import "firebase/auth";
 import { SearchBarComponent } from './search-bar/search-bar.component';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { SafePipe } from './pipe/safe';
+import { CommentComponent } from './comment/comment.component';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -42,7 +44,8 @@ import { SafePipe } from './pipe/safe';
     ChangelogComponent,
     AdminComponent,
     SearchBarComponent,
-    SafePipe
+    SafePipe,
+    CommentComponent,
   ],
   imports: [
     //declaring modules
@@ -53,6 +56,7 @@ import { SafePipe } from './pipe/safe';
     AngularFireDatabaseModule,
     NgxPaginationModule,
     Ng2SearchPipeModule,
+    RouterModule,
   ],
   providers: [UserPostService],
   bootstrap: [AppComponent]

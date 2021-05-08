@@ -19,8 +19,10 @@ export class SearchBarComponent implements OnInit {
   amog=false
   
   amogus(){
-    if(this.searchWord == "amogus"){
+    if(this.searchWord.toLowerCase() == "amogus" || this.searchWord.toLowerCase() == "sus"){
       this.amog=true;
+    } else {
+      this.amog=false;
     }
   }
 

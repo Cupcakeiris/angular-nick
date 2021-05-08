@@ -4,13 +4,13 @@ export const environment = {
   path: 'richladminNnH0RDNbpmJdnLw9DcKy5',
 
   firebase: {
-    apiKey: "AIzaSyCMuzTYjB6dEhncGDVrzGRDHQZfhKWndUs",
-    authDomain: "edgermanflex.firebaseapp.com",
-    projectId: "edgermanflex",
-    storageBucket: "edgermanflex.appspot.com",
-    messagingSenderId: "750551364660",
-    appId: "1:750551364660:web:c2f187993386a514030661",
-    measurementId: "G-QFV8YS5F3G"
+    apiKey: "AIzaSyC-ZBSPOAnNXtbOsLuO-ZXkfJFzGqB-DI4",
+    authDomain: "edgermanflex-93a23.firebaseapp.com",
+    projectId: "edgermanflex-93a23",
+    storageBucket: "edgermanflex-93a23.appspot.com",
+    messagingSenderId: "406897621664",
+    appId: "1:406897621664:web:fe36d13fee724d55d027c5",
+    measurementId: "G-LMHMP10N67"
   }
 
 
