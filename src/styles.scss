@@ -9,7 +9,10 @@ $buttonTextColor: white;
 $postBgColor: rgb(227, 238, 235);
 
 
-
+.flex-container{
+  display: flex;
+  /*justify-content:space-between;*/
+}
 
 
 #warnPost{
@@ -21,8 +24,11 @@ $postBgColor: rgb(227, 238, 235);
 }
 
 .file{
-  max-width: 350px;
-  max-height: 350px;
+  padding-right: 16px;
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  background-position: center;
 }
 
 /*search*/
@@ -146,8 +152,8 @@ li.small-screen {
 }
 
 .container{
-  margin-left: 10%;
-  margin-right: 10%;
+  margin-left: 5%;
+  margin-right: 5%;
 }
 
 
@@ -185,12 +191,13 @@ body{
 
   button{
     color: $buttonTextColor;
+    cursor: pointer;
     padding: 1%;
     width: 150px;
     background-color:$buttonColor;
     outline: none;
     border: none;
-    font-size: 20px;
+    font-size: 18px;
   }
   button:hover{
     background-color: $buttonHoverColor;
@@ -268,8 +275,9 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; font-size: 
     font-size: 30px;
   }
   .file{
-    max-width: 240px;
-    max-height: 240px;
+    width: 150px;
+    height: 150px;
+
   }
   .container{
     margin-left: 5%;

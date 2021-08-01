@@ -19,7 +19,8 @@ const routes: Routes = [
   { path:'blog', component: BlogComponent},
   { path:'contact', component: ContactComponent},
   { path:'changelog', component: ChangelogComponent},
-  { path:environment.path, component: AdminComponent}
+  { path:environment.path, component: AdminComponent},
+  { path:'comment', component: CommentComponent}
 ];
 
 @NgModule({

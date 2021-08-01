@@ -32,18 +32,32 @@
             <!--shows delete button if user has admin role
                 however it might be changed in the future
             -->
-            
-            <button *ngIf="authService.auth.user | async as user;" id='delete' (click)="delete($event, post)">X</button>
-            
-            <label id='header'><b>{{post.title}}</b></label>
-            <label class="mobileText" style="opacity: 0.4; margin-left: 5px;">{{post.date.toDate() | date: 'dd/MM/YYYY HH:mm'}}</label><br><br>
-            
-            <label style="opacity: 0.7;">{{post.username}}</label><br><br>
-        
-            <span>{{post.description}}</span>
-            <img class="file" [src]="post.file | safe" alt=''><br>
 
-            <a [routerLink]="['comment']" [queryParams]="{id: post.id}" style="float: right" class="mobileText">Comment</a><br> <!--doesnt work-->
+
+                
+
+        
+        <div class="flex-container">
+
+        
+
+        <div>
+            <img class="file" *ngIf='post.file!=""' [src]="post.file | safe" alt='wrong file'><br>
+        </div>
+
+
+        <div>
+            <button *ngIf="authService.auth.user | async as user;" id='delete' (click)="delete($event, post)">X</button>
+                
+                <label id='header'><b>{{post.title}}</b></label>
+                <label class="mobileText" style="opacity: 0.4; margin-left: 5px;">{{post.date.toDate() | date: 'dd/MM/YYYY HH:mm'}}</label><br><br>
+                
+                <label style="opacity: 0.7;">{{post.username}}</label><br><br>
+            <span>{{post.description}}</span>
+        </div>
+            
+        </div>
+        <a [routerLink]="['/comment']" [queryParams]="{id: post.id}" style="float: right;" class="mobileText">Comment</a><br> <!--sends user to separate page to comment-->
 
     </div>
 

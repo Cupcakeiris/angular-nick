@@ -1,4 +1,75 @@
-<div class="post">
-    
+<div class="container">
+    <div *ngFor="let post of posts">
+        
+        <div *ngIf="post.id == postId" class="post">
 
+            <div class="flex-container">
+
+                    
+                <div>
+                        <img class="file" *ngIf='post.file!=""' [src]="post.file | safe"><br>
+                </div>
+                
+
+                <div>
+                    <button *ngIf="authService.auth.user | async as user;" id='delete' (click)="delete($event, post)">X</button>
+                    
+                    <label id='header'><b>{{post.title}}</b></label>
+                    <label class="mobileText" style="opacity: 0.4; margin-left: 5px;">{{post.date.toDate() | date: 'dd/MM/YYYY HH:mm'}}</label><br><br>
+                    
+                    <label style="opacity: 0.7;">{{post.username}}</label><br><br>
+                
+                    <span>{{post.description}}</span>
+                </div>
+
+
+
+
+        </div>
+        </div>
+    </div>
+
+    <div>
+        <form (ngSubmit)="onSubmit()" class="post">
+            <label id="header" style="font-size: 18px;"><b>Write your comment</b></label><br><br>
+            <!--same principle as creating new topic-->
+
+            <button *ngIf="authService.auth.user | async as user;" id='delete' (click)="delete($event, comment)">X</button>
+                    
+                    <input type="text" name="username" [(ngModel)]="comment.user" maxlength="30" placeholder="Username"><br><br>
+
+
+            <textarea name="description" msg cols="30" [(ngModel)]="comment.message" maxlength="510" placeholder="Message"></textarea><br><br>
+            
+            <label class="mobileText">Custom image</label><br>
+            <input type="text" name="file" [(ngModel)]="comment.file" maxlength="255" placeholder="Paste it's link"><br><br><br>
+
+            <button style="width: 100px; font-size: 14px;">Submit</button>
+            <br><br>
+        </form>
+    </div>
+
+
+    <div>
+        <pagination-controls (pageChange)="p = $event" class="paginator"
+            [previousLabel]="labels.previousLabel"
+            [nextLabel]="labels.nextLabel"
+            [responsive]="responsive">
+        </pagination-controls>
+    </div>
+
+
+    <div *ngFor="let comment of comments | paginate: {itemsPerPage: 10,
+        currentPage: p}" id={{comment.id}}> 
+        <div  class="post" *ngIf="comment.postID == postId">
+            <button *ngIf="authService.auth.user | async as user;" id='delete' (click)="delete($event, comment)">X</button>
+            
+            <label style="opacity: 0.7;">{{comment.user}}</label>
+            <label class="mobileText" style="opacity: 0.4; margin-left: 20px;">{{comment.date.toDate() | date: 'dd/MM/YYYY HH:mm'}}</label><br>
+        
+            <span>{{comment.message}}</span>
+            <img class="file"  *ngIf='comment.file!=""' [src]="comment.file | safe"><br>
+            </div>
+
+    </div>
 </div>

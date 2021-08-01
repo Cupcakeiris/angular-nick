@@ -49,7 +49,7 @@
         
             <span>{{post.description}}</span>
 
-            <img class="file" [src]="post.file | safe" alt=''>
+            <img class="file" *ngIf='post.file!=""' [src]="post.file | safe" alt=''>
 
     </div>
 </div>

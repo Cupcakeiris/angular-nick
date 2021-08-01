@@ -4,5 +4,5 @@ export interface Post{
     description?: string,
     title?: string,
     username?: string;
-    file?:string;
+    file?:any;
 }

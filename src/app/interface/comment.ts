@@ -1,8 +1,9 @@
 export interface Comment{
     id: string,
     date?: any,
-    description?: string,
+    message?: string,
     title?: string,
-    username?: string;
-    file?:string;
+    user?: string;
+    postID?:string;
+    file?:any;
 }
