@@ -19,7 +19,8 @@ export class CommentComponent implements OnInit {
       previousLabel: ' ',
       nextLabel: ' ',
   };
-
+ 
+  isOn = false
 
   id: any;
   comments!:Comment[];
@@ -42,7 +43,7 @@ export class CommentComponent implements OnInit {
 
   ngOnInit(): void {
     this.commentS.getComment().subscribe(cpost=>{
-      console.log(cpost);
+      //console.log(cpost);
       this.comments = cpost;
     })
 

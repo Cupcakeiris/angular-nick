@@ -7,18 +7,18 @@
 </div>
 
 
+<div id='warnPost' style="opacity: 0.5;">
+    <marquee behavior="scroll" direction="left">
+        <label style="color: rgb(255, 0, 0);">SYSTEM | </label>
+        <label>Suggest your ideas to Alkano#4096 on Discord</label>
+    </marquee>
+</div>
+<br>
 <div class='container' style="text-align: center;">
     <app-search-bar (messageEvent)="receiveMessage($event)"></app-search-bar><br><br>
 </div>
 
 
-
-<div id='warnPost' style="opacity: 0.5;">
-    <marquee behavior="scroll" direction="left">
-        <label style="color: rgb(255, 0, 0);">SYSTEM | </label>
-        <label>Please do not spam it takes so long to delete several posts :sob:</label>
-    </marquee>
-</div>
 
 
 <div class='container'>
@@ -36,26 +36,29 @@
 
                 
 
-        
-        <div class="flex-container">
+            <button style="float: right;" *ngIf="authService.auth.user | async as user;" id='delete' (click)="delete($event, post)">X</button>
 
+        <div class="flex-container">
+            <div>
+                    
+                    <label id='header'><b>{{post.title}}</b></label>
+                    <label class="mobileText" style="opacity: 0.4; margin-left: 5px;">{{post.date.toDate() | date: 'dd/MM/YYYY HH:mm'}}</label><br><br>
+                    
+                    <label style="opacity: 0.7;">{{post.username}}</label><br><br>
+                
+                    <div style="overflow: hidden;">
+                
+                        <div class='overflow'>
+                                 <span >{{post.description}}</span></div></div>
+            </div>
+                
         
 
         <div>
             <img class="file" *ngIf='post.file!=""' [src]="post.file | safe" alt='wrong file'><br>
         </div>
 
-
-        <div>
-            <button *ngIf="authService.auth.user | async as user;" id='delete' (click)="delete($event, post)">X</button>
-                
-                <label id='header'><b>{{post.title}}</b></label>
-                <label class="mobileText" style="opacity: 0.4; margin-left: 5px;">{{post.date.toDate() | date: 'dd/MM/YYYY HH:mm'}}</label><br><br>
-                
-                <label style="opacity: 0.7;">{{post.username}}</label><br><br>
-            <span>{{post.description}}</span>
-        </div>
-            
+        
         </div>
         <a [routerLink]="['/comment']" [queryParams]="{id: post.id}" style="float: right;" class="mobileText">Comment</a><br> <!--sends user to separate page to comment-->
 

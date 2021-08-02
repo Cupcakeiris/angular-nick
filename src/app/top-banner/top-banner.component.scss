@@ -4,6 +4,22 @@ $bottomBorderColor: rgb(57, 141, 109);
 
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu+Condensed&display=swap');
 
+.box{
+    display:flex;
+    justify-content:center;
+  }
+  .item1{
+     flex:1;
+     display: flex;
+     justify-content: center;
+    
+  }
+
+.buttonTop{
+    height: 50px;
+}
+
+
 .topBanner{
     font-family: 'Ubuntu Condensed', sans-serif;
     color: $textColor;
@@ -18,8 +34,6 @@ $bottomBorderColor: rgb(57, 141, 109);
 #logo{
     width: 120px;
     height: 120px;
-    float: left;
-    position: absolute;
 }
 #logo:hover{
     -webkit-transform: scaleX(-1);

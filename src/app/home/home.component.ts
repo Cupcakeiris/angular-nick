@@ -16,8 +16,6 @@ export class HomeComponent implements OnInit {
   constructor(private uPostS: UserPostService) { }
 
   ngOnInit(): void {
-    console.log('ah looking for easter eggs? there r bunch of them, like try to resize ur screen haha')
-
     this.uPostS.getPost().subscribe(post => {
      // console.log(post);
       for (var n in post){

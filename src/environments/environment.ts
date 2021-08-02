@@ -1,2 +1,3 @@
-//muahahaha its hidden boiii
-
+export const environment = {
+    production: true
+  };

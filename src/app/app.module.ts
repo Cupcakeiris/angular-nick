@@ -58,6 +58,7 @@ import { RouterModule } from '@angular/router';
     Ng2SearchPipeModule,
     RouterModule,
   ],
+
   providers: [UserPostService],
   bootstrap: [AppComponent]
 })

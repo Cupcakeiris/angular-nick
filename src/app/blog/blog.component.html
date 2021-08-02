@@ -19,17 +19,17 @@
         <form (ngSubmit)="onSubmit()">
                 <label style="font-size:20px;"><b>Create new post</b></label><br><br>
                 <label>Title</label><br>
-                <input type="text" name="title" [(ngModel)]="post.title" maxlength="50"><br><br>
+                <input type="text" name="title" [(ngModel)]="post.title"><br><br>
         
                 <label>Username</label><br>
-                <input type="text" name="username" [(ngModel)]="post.username" maxlength="25"><br><br>
+                <input type="text" name="username" [(ngModel)]="post.username"><br><br>
 
                 <label>Description</label><br>
-                <textarea name="description" [(ngModel)]="post.description" maxlength="1000"></textarea><br><br>
+                <textarea name="description" [(ngModel)]="post.description"></textarea><br><br>
 
                 
                 <label>Custom image</label><br>
-                <input type="text" name="file" [(ngModel)]="post.file" maxlength="255" placeholder="Paste it's link"><br><br><br>
+                <input type="text" name="file" [(ngModel)]="post.file" placeholder="Paste it's link"><br><br><br>
         
                 <button>Submit</button>
                 <br><br>
@@ -39,17 +39,24 @@
 
     <div class="post" *ngFor="let post of posts| filter:search | paginate: {itemsPerPage: 10,
         currentPage: p}">
+            
+            <button style="float: right;" *ngIf="authService.auth.user | async as user;" id='delete' (click)="delete($event, post)">X</button>
 
-            <button *ngIf="authService.auth.user | async as user;" id='delete' (click)="delete($event, post)">X</button>
-            
-            <label id='header'><b>{{post.title}}</b></label>
-            <label style="opacity: 0.4; margin-left: 5px;">{{post.date.toDate() | date: 'dd/MM/YYYY HH:mm'}}</label><br><br>
-            
-            <label style="opacity: 0.7;">{{post.username}}</label><br><br>
+        <div class="flex-container">
+            <div>
+                    
+                    <label id='header'><b>{{post.title}}</b></label>
+                    <label class="mobileText" style="opacity: 0.4; margin-left: 5px;">{{post.date.toDate() | date: 'dd/MM/YYYY HH:mm'}}</label><br><br>
+                    
+                    <label style="opacity: 0.7;">{{post.username}}</label><br><br>
+                <span>{{post.description}}</span>
+            </div>
+                
         
-            <span>{{post.description}}</span>
 
-            <img class="file" *ngIf='post.file!=""' [src]="post.file | safe" alt=''>
+        <div>
+            <img class="file" *ngIf='post.file!=""' [src]="post.file | safe" alt='wrong file'><br>
+        </div>
 
     </div>
 </div>
