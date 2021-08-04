@@ -27,7 +27,7 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { SafePipe } from './pipe/safe';
 import { CommentComponent } from './comment/comment.component';
 import { RouterModule } from '@angular/router';
-
+import { Profanity } from './pipe/profanity'
 
 
 @NgModule({
@@ -46,6 +46,7 @@ import { RouterModule } from '@angular/router';
     SearchBarComponent,
     SafePipe,
     CommentComponent,
+    Profanity
 
   ],
   imports: [

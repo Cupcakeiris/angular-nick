@@ -4,7 +4,6 @@ import { UserPostService } from '../service/user-post.service';
 import {AuthService} from '../service/auth.service';
 import {SearchBarComponent} from '../search-bar/search-bar.component';
 import { Post } from '../interface/post';    
-var filter = require('leo-profanity');
 
 
 @Component({
@@ -17,7 +16,7 @@ var filter = require('leo-profanity');
 
 export class PostComponent implements OnInit {
   //pagination's custom properties
-  p: number =1;
+  p: number =1
 
 
   public responsive: boolean = true;
@@ -46,9 +45,6 @@ export class PostComponent implements OnInit {
       //console.log(post);
       this.posts = post;
     })
-
-    console.log(filter.check('I have boob'))
-
   }
 
 

@@ -1,14 +1,4 @@
-<script>
-    var Filter = require('bad-words'),
-    filter = new Filter();
-
-    function testt(){
-        console.log(filter.clean("Don't be an ash0le"));
-    }
-</script>
-
-
-    <div>
+   <div>
         <pagination-controls (pageChange)="p = $event" class="paginator"
             [previousLabel]="labels.previousLabel"
             [nextLabel]="labels.nextLabel"
@@ -51,15 +41,15 @@
             <div class="flex-container">
                 <div>
                         
-                        <label id='header'><b>{{post.title}}</b></label>
+                        <label id='header'><b>{{post.title | profanity}}</b></label>
                         <label class="mobileText" style="opacity: 0.4; margin-left: 5px;">{{post.date.toDate() | date: 'dd/MM/YYYY HH:mm'}}</label><br><br>
                         
-                        <label style="opacity: 0.7;">{{post.username}}</label><br><br>
+                        <label style="opacity: 0.7;">{{post.username | profanity}}</label><br><br>
                     
                         <div style="overflow: hidden;">
                     
                             <div class='overflow'>
-                                    <span >{{post.description}}</span></div></div>
+                                    <span>{{post.description | profanity}}</span></div></div>
                 </div>
                     
             

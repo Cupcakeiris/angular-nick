@@ -23,7 +23,6 @@
     "@angular/platform-browser": "~11.2.5",
     "@angular/platform-browser-dynamic": "~11.2.5",
     "@angular/router": "~11.2.5",
-    "bad-words": "^3.0.4",
     "body-parser": "^1.19.0",
     "countapi-js": "^1.0.2",
     "firebase": "^8.3.1",
