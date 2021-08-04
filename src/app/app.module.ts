@@ -46,6 +46,7 @@ import { RouterModule } from '@angular/router';
     SearchBarComponent,
     SafePipe,
     CommentComponent,
+
   ],
   imports: [
     //declaring modules

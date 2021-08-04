@@ -1,67 +1,77 @@
-<div>
-    <pagination-controls (pageChange)="p = $event" class="paginator"
-        [previousLabel]="labels.previousLabel"
-        [nextLabel]="labels.nextLabel"
-        [responsive]="responsive">
-    </pagination-controls>
-</div>
+<script>
+    var Filter = require('bad-words'),
+    filter = new Filter();
+
+    function testt(){
+        console.log(filter.clean("Don't be an ash0le"));
+    }
+</script>
 
 
-<div id='warnPost' style="opacity: 0.5;">
-    <marquee behavior="scroll" direction="left">
-        <label style="color: rgb(255, 0, 0);">SYSTEM | </label>
-        <label>Suggest your ideas to Alkano#4096 on Discord</label>
-    </marquee>
-</div>
-<br>
-<div class='container' style="text-align: center;">
-    <app-search-bar (messageEvent)="receiveMessage($event)"></app-search-bar><br><br>
-</div>
-
-
-
-
-<div class='container'>
-
-<button id='button' (click)=" isOn = !isOn">Create new post</button>
-<app-create-post *ngIf="isOn"></app-create-post>
-    
-    <!--Angular's inbuild loop for html-->      <!--Filter and pagination package pipes-->
-    <div class="post" *ngFor="let post of posts  | filter:search | paginate: {itemsPerPage: 10,
-        currentPage: p}" id={{post.id}}>
-            <!--shows delete button if user has admin role
-                however it might be changed in the future
-            -->
-
-
-                
-
-            <button style="float: right;" *ngIf="authService.auth.user | async as user;" id='delete' (click)="delete($event, post)">X</button>
-
-        <div class="flex-container">
-            <div>
-                    
-                    <label id='header'><b>{{post.title}}</b></label>
-                    <label class="mobileText" style="opacity: 0.4; margin-left: 5px;">{{post.date.toDate() | date: 'dd/MM/YYYY HH:mm'}}</label><br><br>
-                    
-                    <label style="opacity: 0.7;">{{post.username}}</label><br><br>
-                
-                    <div style="overflow: hidden;">
-                
-                        <div class='overflow'>
-                                 <span >{{post.description}}</span></div></div>
-            </div>
-                
-        
-
-        <div>
-            <img class="file" *ngIf='post.file!=""' [src]="post.file | safe" alt='wrong file'><br>
-        </div>
-
-        
-        </div>
-        <a [routerLink]="['/comment']" [queryParams]="{id: post.id}" style="float: right;" class="mobileText">Comment</a><br> <!--sends user to separate page to comment-->
-
+    <div>
+        <pagination-controls (pageChange)="p = $event" class="paginator"
+            [previousLabel]="labels.previousLabel"
+            [nextLabel]="labels.nextLabel"
+            [responsive]="responsive">
+        </pagination-controls>
     </div>
 
-</div>
+
+    <div id='warnPost' style="opacity: 0.5;">
+        <marquee behavior="scroll" direction="left">
+            <label style="color: rgb(255, 0, 0);">SYSTEM | </label>
+            <label>Suggest your ideas to Alkano#4096 on Discord</label>
+        </marquee>
+    </div>
+    <br>
+    <div class='container' style="text-align: center;">
+        <app-search-bar (messageEvent)="receiveMessage($event)"></app-search-bar><br><br>
+    </div>
+
+
+
+
+    <div class='container'>
+
+    <button id='button' (click)=" isOn = !isOn">Create new post</button>
+    <app-create-post *ngIf="isOn"></app-create-post>
+        
+        <!--Angular's inbuild loop for html-->      <!--Filter and pagination package pipes-->
+        <div class="post" *ngFor="let post of posts  | filter:search | paginate: {itemsPerPage: 10,
+            currentPage: p}" id={{post.id}}>
+                <!--shows delete button if user has admin role
+                    however it might be changed in the future
+                -->
+
+
+                    
+
+                <button style="float: right;" *ngIf="authService.auth.user | async as user;" id='delete' (click)="delete($event, post)">X</button>
+
+            <div class="flex-container">
+                <div>
+                        
+                        <label id='header'><b>{{post.title}}</b></label>
+                        <label class="mobileText" style="opacity: 0.4; margin-left: 5px;">{{post.date.toDate() | date: 'dd/MM/YYYY HH:mm'}}</label><br><br>
+                        
+                        <label style="opacity: 0.7;">{{post.username}}</label><br><br>
+                    
+                        <div style="overflow: hidden;">
+                    
+                            <div class='overflow'>
+                                    <span >{{post.description}}</span></div></div>
+                </div>
+                    
+            
+
+            <div>
+                <img class="file" *ngIf='post.file!=""' [src]="post.file | safe" onError="this.src='assets/img/error.png'"><br>
+            </div>
+
+            
+            </div>
+            <a [routerLink]="['/comment']" [queryParams]="{id: post.id}" style="float: right;" class="mobileText">Comment</a><br> <!--sends user to separate page to comment-->
+
+        </div>
+
+    </div>

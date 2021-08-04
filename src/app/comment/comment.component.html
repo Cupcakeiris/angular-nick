@@ -18,7 +18,7 @@
                 </div>
                     
                 <div>
-                    <img class="file" *ngIf='post.file!=""' [src]="post.file | safe" alt='wrong file'><br>
+                    <img class="file" *ngIf='post.file!=""' [src]="post.file | safe" onError="this.src='assets/img/error.png'"><br>
                 </div>
                 
 
@@ -75,7 +75,7 @@
         </div>
 
             <div>
-                <img class="file" style="width: 200px; height: 200px;" *ngIf='comment.file!=""' [src]="comment.file | safe" alt='wrong file'><br>
+                <img class="file" style="width: 200px; height: 200px;" *ngIf='comment.file!=""' [src]="comment.file | safe" onError="this.src='assets/img/error.png'"><br>
             </div>
            
             
