@@ -10,6 +10,7 @@ import { CommentComponent } from './comment/comment.component';
 import { VideoComponent } from './video/video.component';
 import {AdminComponent} from './admin/admin.component';
 import {environment} from '../environments/environment.prod';
+import { MageGameComponent } from './mage-game/mage-game.component';
 
 const routes: Routes = [
   { path:'', component: HomeComponent },
@@ -20,7 +21,8 @@ const routes: Routes = [
   { path:'contact', component: ContactComponent},
   { path:'changelog', component: ChangelogComponent},
   { path:environment.path, component: AdminComponent},
-  { path:'comment', component: CommentComponent}
+  { path:'comment', component: CommentComponent},
+  { path:'mage', component: MageGameComponent}
 ];
 
 @NgModule({

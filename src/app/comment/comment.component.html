@@ -9,12 +9,12 @@
                 <div>
                     
                     
-                    <label id='header'><b>{{post.title}}</b></label>
+                    <label id='header'><b>{{post.title | profanity}}</b></label>
                     <label class="mobileText" style="opacity: 0.4; margin-left: 5px;">{{post.date.toDate() | date: 'dd/MM/YYYY HH:mm'}}</label><br><br>
                     
-                    <label style="opacity: 0.7;">{{post.username}}</label><br><br>
+                    <label style="opacity: 0.7;">{{post.username | profanity}}</label><br><br>
                 
-                    <span>{{post.description}}</span>
+                    <span>{{post.description | profanity}}</span>
                 </div>
                     
                 <div>
