@@ -2,6 +2,7 @@ $bgColor: rgb(32, 32, 32);
 $textColor: white;
 $bottomBorderColor: rgb(57, 141, 109);
 
+
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu+Condensed&display=swap');
 
 .box{
@@ -17,11 +18,12 @@ $bottomBorderColor: rgb(57, 141, 109);
 
 .buttonTop{
     height: 50px;
+    font-family: 'Pixel';
 }
 
 
 .topBanner{
-    font-family: 'Ubuntu Condensed', sans-serif;
+    font-family: 'Pixel';
     color: $textColor;
     text-align: center;
     width: auto;

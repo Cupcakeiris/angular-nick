@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
+@font-face {
+  font-family: "Pixel";
+  src: local("Pixel"), url(./assets/font/Minecraft.ttf) format("truetype");
+}
+
 $bgColor: rgb(48, 48, 48);
 $textColor: rgb(6, 37, 31);
 $buttonColor:rgb(9, 56, 44);
@@ -65,6 +70,7 @@ $postBgColor: rgb(227, 238, 235);
 /**/
 
 #button{
+  font-family: "Pixel";
   margin-top: 10px;
   width: 200px;
 }
@@ -156,6 +162,7 @@ li.small-screen {
 }
 
 .submit{
+  font-family: "Pixel";
   background-color: $buttonColor;
   color: $buttonTextColor;
   border: none;
